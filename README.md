@@ -1,1 +1,0 @@
-# YagizOzefe.github.io
