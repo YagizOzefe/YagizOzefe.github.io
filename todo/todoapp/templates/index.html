@@ -1,0 +1,50 @@
+    {% extends "base.html" %}
+    
+    {% block title %}
+    <title>Todo App</title>
+    {% endblock title %}
+
+    
+    {% block content %}
+    <div class="container">
+        <form method="POST" class="d-flex justify-content-center flex-column gap-4">
+            {% csrf_token %}
+            <div class="text-center">
+
+            {{ form }}
+            {% if request.user.is_authenticated %}
+                <input  class="btn btn-outline-dark w-25 text-center mt-3" type="submit" value="Kaydet">
+                {% else %}
+                <p> Sayfayı Görüntülemek İçin <a href="{% url 'login' %}">Giriş Yapınız</a> </p>
+
+                
+
+                {% endif %}
+            </div>
+        </form>
+        
+
+    {% for t in todo %}
+    <div class="d-flex align-items-center justify-content-center align-content-center mt-3">
+        <div class="d-flex justify-content-between align-content-center align-items-center border border-1 border-black rounded-2 w-50 text-center p-2 m-2 bg-warning">
+            <a class="text-decoration-none text-black " href="{% url "todo-detay" t.slug %}">  {{t.todo}} </a> 
+            <form method="POST" action="{% url "sil" %}">
+                {% csrf_token %}
+                <input  type="text" name="sil" value="{{t.id}}" hidden>
+                <input type="submit" value="Sil" class="btn btn-danger">
+            </form>
+
+        </div>
+    </div>
+   
+   
+      
+        
+
+        {% endfor %}
+    {% endblock content %}
+
+   
+</div>
+
+
