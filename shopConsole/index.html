@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let user = { fname: "Emre", username: "emre1", password: "123", hidden: "muz", anapara: 500 }
+
+
+        let kullanici = prompt("username")
+        let sifre = prompt("password")
+
+
+        if (user.username == kullanici && user.password == sifre) {
+
+            console.log("hoşgeldiniz ", user.fname, " Alışveriş yapabilirsiniz!");
+
+            let sorgu = prompt("Alışveriş yapmak istediğiniz kategoriyi seçin: Giyim = ( g ) , Elektronik = ( e )")
+
+
+            if (sorgu == "g") {
+
+                let sorgu2 = prompt("1 adet giyim eşyası seçin: elbise(1), ayyakabi(2), tshirt(3)")
+
+                if (sorgu2 == "1") {
+
+                    let giyimkt = { elbise: 40, ayakkabi: 70, tshirt: 60 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(giyimkt.elbise));
+                }
+
+                else if (sorgu2 == "2") {
+
+                    let giyimkt = { elbise: 40, ayakkabi: 70, tshirt: 60 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(giyimkt.ayakkabi));
+                }
+
+                else if (sorgu2 == "3") {
+
+                    let giyimkt = { elbise: 40, ayakkabi: 70, tshirt: 60 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(giyimkt.tshirt));
+                }
+
+            }
+
+
+            if (sorgu == "e") {
+
+                let elektronikkt = { telefon: 160, tablet: 270, bilgisayar: 360 }
+
+                let sorgu3 = prompt("1 adet elektronik eşyas seçin: telefon(1), tablet(2), bilgisayar(3)")
+
+                if (sorgu3 == "1") {
+
+                    let elektronikkt = { telefon: 160, tablet: 270, bilgisayar: 360 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(elektronikkt.telefon));
+                }
+
+                else if (sorgu3 == "2") {
+
+                    let elektronikkt = { telefon: 160, tablet: 270, bilgisayar: 360 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(elektronikkt.tablet));
+                }
+
+                else if (sorgu3 == "3") {
+
+                    let elektronikkt = { telefon: 160, tablet: 270, bilgisayar: 360 }
+
+                    console.log('kalan para: ', Number(user.anapara) - Number(elektronikkt.bilgisayar));
+                }
+
+            }
+
+        } else {
+            console.log("Şifre veya Kullanıcı Adı Yanlış!!");
+        }
+    </script>
+</body>
+
+</html>
