@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    height: 800px;
+}
+
+.mynavbar {
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 1px 0px 20px 1px rgb(63, 140, 255);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper .menu {
+    display: none;
+}
+
+@media screen and (max-width:1540px) {
+
+    .wrapper .menu {
+        display: flex;
+        color: white;
+        cursor: pointer;
+        font-size: 30px;
+        height: fit-content;
+        position: absolute;
+        margin-left: 30px;
+        margin-top: 30px;
+
+    }
+
+    .wrapper .menu:hover~.mynavbar {
+        display: flex;
+        left: 0px;
+        transition: .6s;
+    }
+
+    .mynavbar {
+        left: -400px;
+
+    }
+
+
+}
+
+@media screen and (min-width:1540px) {
+
+    .wrapper .main-content {
+        margin-left: 250px;
+    }
+
+
+}
+
+@media screen and (max-width:830px) {
+    .wrapper .main-content .form-cont {
+        padding-top: 70px;
+        width: 50%;
+        height: 386px;
+    }
+    
+    .wrapper .main-content .main-con2 {
+        margin-right: 25x;
+    }
+   
+}
+
+/* MENÜ */
+.mynavbar .logo {
+    width: 100%;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 120px;
+    background-color: rgb(94, 94, 94);
+
+    user-select: none;
+    /*baslı tutup seçilmeyi önler*/
+}
+
+.mynavbar ul li a {
+    display: block;
+    height: 100%;
+    width: 200px;
+    font-size: 17px;
+    line-height: 55px;
+    color: white;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    transition: .3s;
+}
+
+.mynavbar ul li a:hover {
+    padding-left: 10px;
+    color: rgb(63, 140, 255);
+}
+
+.mynavbar ul li a i {
+    padding-right: 10px;
+}
+
+/* NAVBAR BİTTİ */
+
+.wrapper .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0px 70px;
+    width: 100%;
+
+    color: white;
+}
+
+.wrapper .main-content .main-con1 {
+    height: 120px;
+    width: 50%;
+}
+
+/* MAİNCON2 BAŞLANGIÇ */
+
+.wrapper .main-content .main-con2 {
+    width: 50%;
+    height: 152px;
+    color: white;
+    display: flex;
+}
+
+.wrapper .main-content .main-con2 .address {
+    height: 112px;
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper .main-content .main-con2 .address h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.wrapper .main-content .main-con2 .address p {
+    font-size: 16px;
+    color: #E9E9E9;
+}
+
+.wrapper .main-content .main-con2 .address i {
+    font-size: 25px;
+    color: rgb(63, 140, 255);
+}
+
+.wrapper .main-content .main-con2 .call-us {
+    height: 112px;
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper .main-content .main-con2 .call-us h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.wrapper .main-content .main-con2 .call-us p {
+    font-size: 16px;
+    color: #E9E9E9;
+}
+
+.wrapper .main-content .main-con2 .call-us i {
+    font-size: 25px;
+    color: rgb(63, 140, 255);
+}
+
+.wrapper .main-content .main-con2 .email {
+    height: 112px;
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper .main-content .main-con2 .email h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.wrapper .main-content .main-con2 .email p {
+    font-size: 16px;
+    color: #E9E9E9;
+}
+
+.wrapper .main-content .main-con2 .email i {
+    font-size: 25px;
+    color: rgb(63, 140, 255);
+}
+
+/* FORM KISMI */
+
+.wrapper .main-content .form-cont {
+    width: 50%;
+    height: 386px;
+}
+
+.wrapper .main-content .form-cont .form-top {
+    display: flex;
+    gap: 20px;
+
+}
+
+.wrapper .main-content .form-cont .form-top input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    border: solid 1px rgb(80, 80, 80);
+    background-color: #222222;
+    color: white;
+    padding-left: 15px;
+    font-size: 17px;
+    outline: none;
+}
+
+.wrapper .main-content .form-cont .form-mid input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    border: solid 1px rgb(80, 80, 80);
+    background-color: #222222;
+    color: white;
+    padding-left: 15px;
+    font-size: 17px;
+    outline: none;
+    margin: 25px 0px;
+}
+
+.wrapper .main-content .form-cont .form-bottom input {
+    width: 100%;
+    height: 140px;
+    border-radius: 30px;
+    border: solid 1px rgb(80, 80, 80);
+    background-color: #222222;
+    color: white;
+    padding-left: 15px;
+    padding-bottom: 80px;
+    font-size: 17px;
+    outline: none;
+
+}
+
+.wrapper .main-content .form-cont button {
+    background-color: #207ecc;
+    color: white;
+    padding: 0px 50px;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 15px;
+    transition: .4s;
+}
+
+.wrapper .main-content .form-cont button:hover {
+    background-color: #329fda;
+}
