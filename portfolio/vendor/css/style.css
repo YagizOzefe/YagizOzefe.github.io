@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+}
+
+.user-img {
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: rgb(53, 53, 53);
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content {
+    left: 250px;
+    width: calc(100% - 250px);
+    
+}
+
+.sidebar.active{
+    width: 250px;
+
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: white;
+    top: .4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar #btn:hover{
+    color: rgb(63, 140, 255);
+    transition: .2s;
+}
+
+.sidebar .top .logo{
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo {
+    opacity: 1;
+}
+
+.top .logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    
+}
+
+.user p{
+    color: white;
+    opacity: 1;
+    margin-left: 1rem;
+}
+
+.bold{
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.sidebar p{
+    opacity: 0;
+}
+
+.sidebar.active p{
+    opacity: 1;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 0.8rem;
+    margin-top: 30px;
+    transition: .3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgb(63, 140, 255);
+}
+
+.sidebar.active ul li a:hover{
+    padding-left: 10px;
+    color: white;
+
+}
+
+.sidebar.active ul li a{
+    display: block;
+    height: 100%;
+    width: 200px;
+    font-size: 17px;
+    line-height: 55px;
+    color: white;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    transition: .3s;
+}
+
+.sidebar ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item {
+    opacity: 0;
+}
+
+.sidebar.active .nav-item {
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    color: white;
+    background-color: rgb(53, 53, 53);  
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 25px 0px white;
+    border-radius: .6rem;
+    padding: .4rem 1.2rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    display: none;
+    
+}
+
+.sidebar ul li:hover .tooltip {
+    display: block;
+    
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.main-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    min-height: 100vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+    text-align: center;
+}
+
+.main-content .container .info img {
+    width: 400px;
+    background-color: black;
+    border: 2px white solid;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 35px 0px rgb(63, 140, 255);
+    
+}
+
+.main-content .container .info h1{
+    margin-bottom: 10px;
+    
+}
+
+.main-content .container .info .socials{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.main-content .container .info .socials a i{
+    color: white;
+    font-size: 30px; 
+    transition: .3s;
+}
+
+.main-content .container .info .socials a i:hover{
+    color: rgb(63, 140, 255);
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:600px) {
+    .sidebar.active ~ .main-content {
+        left: -380px;
+        width: calc(100% - 380px);
+        
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+    .main-content .container .info img{
+        width: 180px;
+
+    }
+}
